@@ -82,32 +82,13 @@ portfolio_data = {
         }
     ],
     'blog_posts': [
-        # {
-        #     'title': 'Understanding Docker Containers',
-        #     'date': '2024-01-15',
-        #     'summary': 'A comprehensive guide to Docker containers and their benefits',
-        #     'content': '''
-        #     Docker containers have revolutionized how we deploy applications...
-        #     [Full blog post content here]
-        #     ''',
-        #     'tags': ['Docker', 'DevOps', 'Containers']
-        # },
-        {
-            'title': 'Python Best Practices',
-            'date': '2024-01-01',
-            'summary': 'Essential Python coding practices for clean and maintainable code',
-            'content': '''
-            Writing clean Python code is essential for maintaining large projects...
-            [Full blog post content here]
-            ''',
-            'tags': ['Python', 'Programming', 'Best Practices']
-        }
+  
     ],
     'contact': {
         'email': 'ronaldsayago2@gmail.com',
         'phone': '09278159941',
         'linkedin': 'https://linkedin.com/in/ronaldsayago2',
-        'github': 'https://github.com/ronald-toolkt',
+        'github': 'https://github.com/ronaldsayago2',
         'facebook': 'https://fb.com/ronaldsayago2'
     }
 }

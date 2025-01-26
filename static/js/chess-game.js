@@ -1,26 +1,24 @@
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Chess script loaded');
     
-    let board = null;
+    // Check if board element exists
+    const boardElement = document.getElementById('myBoard');
+    if (!boardElement) {
+        console.error('Board element not found! Make sure you have a div with id="myBoard"');
+        return;
+    }
 
+    let board = null;
     let game = new Chess();
     let $status = $('#status');
     let engine = null;
     let engineStatus = {};
-
-    // Initialize Stockfish engine
-    engine = new Worker('/static/js/stockfish.js');
-    engine.onmessage = function(event) {
-        const line = event.data;
-        console.log(`Engine output: ${line}`);
-
-        if (line.startsWith('bestmove')) {
-            const bestMove = line.split(' ')[1];
-            game.move(bestMove, { sloppy: true });
-            board.position(game.fen());
-            updateStatus();
-        }
-    };
+    
+    // Check if jQuery and status element are available
+    if (!$status.length) {
+        console.error('Status element not found! Make sure you have a div with id="status"');
+        return;
+    }
 
     function startEngine() {
         engineStatus.engineReady = false;
@@ -85,16 +83,38 @@ document.addEventListener('DOMContentLoaded', function() {
         onDrop: onDrop,
         onSnapEnd: onSnapEnd,
         pieceTheme: 'https://chessboardjs.com/img/chesspieces/alpha/{piece}.png'
-        // pieceTheme: '/static/img/chesspieces/wikipedia/{piece}.png'
-
-
     };
 
-    board = Chessboard('myBoard', config);
-    updateStatus();
-    startEngine();
+    try {
+        // Initialize Stockfish engine
+        engine = new Worker('/static/js/stockfish.js');
+        engine.onmessage = function(event) {
+            const line = event.data;
+            console.log(`Engine output: ${line}`);
 
-    // Buttons
+            if (line.startsWith('bestmove')) {
+                const bestMove = line.split(' ')[1];
+                game.move(bestMove, { sloppy: true });
+                board.position(game.fen());
+                updateStatus();
+            }
+        };
+    } catch (error) {
+        console.error('Error initializing Stockfish:', error);
+    }
+
+    try {
+        board = Chessboard('myBoard', config);
+        if (!board) {
+            throw new Error('Failed to initialize chessboard');
+        }
+        updateStatus();
+        startEngine();
+    } catch (error) {
+        console.error('Error initializing chessboard:', error);
+    }
+
+    // Button event handlers
     $('#startBtn').on('click', function() {
         game.reset();
         board.start();
