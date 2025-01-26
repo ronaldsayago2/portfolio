@@ -3,31 +3,46 @@
 {% block content %}
 <section class="about-section py-5">
     <div class="container">
-        <h1 class="section-header text-center mb-5" data-aos="fade-up">About Me</h1>
+        <!-- About Header -->
+        <div class="section-header text-center mb-5" data-aos="fade-up">
+            <span class="section-subtitle">GET TO KNOW ME</span>
+            <h1 class="section-title">About Me</h1>
+            <div class="section-divider">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
         
-        <!-- Personal Info -->
-        <div class="row mb-5">
-            <div class="col-lg-8 mx-auto">
-                <div class="about-card" data-aos="fade-up">
-                    <div class="card-body">
-                        <p class="lead">{{ data.personal_info.about_long }}</p>
-                        <p><strong>Location:</strong> {{ data.personal_info.location }}</p>
+     <!-- Personal Info -->
+    <div class="row mb-5">
+        <div class="col-lg-8 mx-auto">
+            <div class="about-card gradient-card" data-aos="fade-up">
+                <div class="card-body">
+                    <p class="about-text">{{ data.personal_info.about_long }}</p>
+                    <div class="location-info">
+                        <i class="fas fa-map-marker-alt location-icon"></i>
+                        <span class="location-text">{{ data.personal_info.location }}</span>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
         <!-- Education -->
-        <h2 class="section-header text-center mb-4" data-aos="fade-up">Education</h2>
+        <h2 class="section-header text-center mb-4" data-aos="fade-up">
+            <span class="section-subtitle">ACADEMIC BACKGROUND</span>
+            <div class="section-title">Education</div>
+        </h2>
         <div class="row mb-5">
             <div class="col-lg-8 mx-auto">
                 {% for edu in data.personal_info.education %}
-                <div class="timeline-card" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
+                <div class="timeline-card gradient-card-blue" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
                     <div class="card-body">
                         <h5 class="card-title">{{ edu.degree }}</h5>
                         <h6 class="card-subtitle mb-2">{{ edu.school }}</h6>
                         <p class="text-muted">{{ edu.year }}</p>
-                        <p class="card-text">{{ edu.description }}</p>
+                        <!-- <p class="card-text">{{ edu.description }}</p> -->
                     </div>
                 </div>
                 {% endfor %}
@@ -35,11 +50,14 @@
         </div>
 
         <!-- Experience -->
-        <h2 class="section-header text-center mb-4" data-aos="fade-up">Experience</h2>
+        <h2 class="section-header text-center mb-4" data-aos="fade-up">
+            <span class="section-subtitle">WORK HISTORY</span>
+            <div class="section-title">Experience</div>
+        </h2>
         <div class="row mb-5">
             <div class="col-lg-8 mx-auto">
                 {% for exp in data.personal_info.experience %}
-                <div class="timeline-card" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
+                <div class="timeline-card gradient-card-purple" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
                     <div class="card-body">
                         <h5 class="card-title">{{ exp.title }}</h5>
                         <h6 class="card-subtitle mb-2">{{ exp.company }}</h6>
@@ -55,11 +73,34 @@
             </div>
         </div>
 
+        <!-- Licenses and Certifications -->
+        <h2 class="section-header text-center mb-4" data-aos="fade-up">
+            <span class="section-subtitle">CREDENTIALS</span>
+            <div class="section-title">Licenses & Certifications</div>
+        </h2>
+        <div class="row mb-5">
+            <div class="col-lg-8 mx-auto">
+                <div class="license-card gradient-card-green" data-aos="fade-up">
+                    <div class="card-body">
+                        <div class="license-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h5 class="card-title">Licensed Electronics Engineer</h5>
+                        <p class="card-text">Professional Regulation Commission (PRC)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
         <!-- Skills -->
-        <h2 class="section-header text-center mb-4" data-aos="fade-up">Skills</h2>
+        <h2 class="section-header text-center mb-4" data-aos="fade-up">
+            <span class="section-subtitle">TECHNICAL PROFICIENCY</span>
+            <div class="section-title">Skills</div>
+        </h2>
         <div class="row">
             <div class="col-lg-8 mx-auto">
-                <div class="skills-card" data-aos="fade-up">
+                <div class="skills-card gradient-card" data-aos="fade-up">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-6 mb-4">
@@ -75,9 +116,15 @@
                                 {% endfor %}
                             </div>
                             <div class="col-md-6 mb-4">
-                                <h5>Databases</h5>
-                                {% for skill in data.skills.databases %}
+                                <h5>Frameworks & Libraries</h5>
+                                {% for skill in data.skills.frameworks_and_libraries %}
                                 <span class="badge bg-info me-2 mb-2">{{ skill }}</span>
+                                {% endfor %}
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <h5>Odoo Expertise</h5>
+                                {% for skill in data.skills.odoo_expertise %}
+                                <span class="badge bg-warning me-2 mb-2">{{ skill }}</span>
                                 {% endfor %}
                             </div>
                             <div class="col-md-6 mb-4">
@@ -86,11 +133,19 @@
                                 <span class="badge bg-secondary me-2 mb-2">{{ skill }}</span>
                                 {% endfor %}
                             </div>
+                            <div class="col-md-6 mb-4">
+                                <h5>Professional Skills</h5>
+                                {% for skill in data.skills.soft_skills %}
+                                <span class="badge bg-danger me-2 mb-2">{{ skill }}</span>
+                                {% endfor %}
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+
 
         <div class="text-center mt-5">
             <a href="{{ url_for('static', filename='files/resume.pdf') }}" 

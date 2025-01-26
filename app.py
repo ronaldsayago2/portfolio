@@ -14,12 +14,14 @@ mail = Mail(app)
 portfolio_data = {
     'personal_info': {
         'name': 'Ronald II G. Sayago',
-        'title': 'Odoo Developer',
-        'about_short': 'Odoo developer with 2+ years of experience',
-        'about_long': '''
-        Detail-oriented  odoo developer/Technical Consultant with expertise in Python, Postgresql and Odoo Framework.
-        ''',
-        'location': 'Mandaluyong City, Philippines',
+        'title': 'Assistant Technical Lead',
+        'about_short': 'Odoo Developer with 2+ years of experience',
+        'about_long': '''Dedicated and detail-oriented Technical Consultant with over two years of experience specializing in Odoo ERP systems. Skilled in designing and developing custom Odoo modules, particularly for purchase, sales, and inventory customizations, to meet diverse client business needs. Experienced in creating and customizing detailed PDF and Excel reports, managing cloud-deployed databases, and providing comprehensive post-deployment support. Strong expertise in Python, XML, JavaScript and PostgreSQL, enabling efficient customization and integration of ERP solutions.''',
+
+        'location': 'Urban Pad, Kings road, Samat Street, Mandaluyong City, Philippines',
+        
+        
+        
         'education': [
             {
                 'degree': 'Electronics Engineering Technology',
@@ -57,14 +59,34 @@ portfolio_data = {
             }
         ]
     },
-    'skills': {
-        'programming': ['Python', 'JavaScript', 'C#', 'C++','matlab'],
-        'web_technologies': ['HTML5', 'CSS3', 'React', 'Flask'],
-        'databases': ['PostgreSQL'],
-        'tools': ['Git', 'Docker', 'Kubernetes'],
-        'soft_skills': ['Problem Solving', 'Communication']
-    },
     
+'skills': {
+        'programming': ['Python', 'JavaScript', 'C#', 'C++', 'MATLAB','XML','Bash Script'],
+        'web_technologies': ['HTML5', 'CSS', 'Flask', 'Flutter','AJAX', 'jQuery'],
+        'databases': ['PostgreSQL'],
+        'tools': ['Git', 'Github Desktop', 'PG Admin', 'Pentaho', 'Navicat'],
+        'frameworks_and_libraries': [
+            'Odoo Framework',
+            'TensorFlow',
+            'Keras',
+            'OpenCV',
+            'YOLO'
+        ],
+        'odoo_expertise': [
+            'Custom Module Development',
+            'PDF/Excel Report Creation',
+            'Database Management',
+            'Cloud Deployment',
+            'Website Development',
+        ],
+        'soft_skills': [
+            'Problem Solving',
+            'Technical Leadership',
+            'Client Support',
+            'System Troubleshooting',
+            'Team Mentoring'
+        ]
+    },
     
     
     

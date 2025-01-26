@@ -35,30 +35,66 @@
     background: linear-gradient(to right, #818cf8, #c084fc);
 }
 
+
 /* Education & Experience Cards */
+/* Add spacing between timeline cards */
 .timeline-card {
-    border: none;
-    border-radius: 15px;
-    background: white;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-    margin-bottom: 1.5rem;
-    transition: all 0.3s ease;
+    margin-bottom: 2rem;  /* Adds space between cards */
+    position: relative;
 }
 
-.timeline-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+/* Optional: Add a connecting line between cards */
+.timeline-card:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    width: 2px;
+    height: 1rem;
+    background: linear-gradient(to bottom, rgba(52, 152, 219, 0.5), transparent);
+    transform: translateX(-50%);
 }
 
+/* Ensure the last card doesn't have extra margin */
+.timeline-card:last-child {
+    margin-bottom: 0;
+}
+
+/* Add more padding inside cards for better spacing */
+.timeline-card .card-body {
+    padding: 2rem;
+}
+
+
+/* Card Text Colors */
 .timeline-card .card-title {
-    color: #1e293b;
+    color: #ffffff;  /* Bright white for the degree name */
+    font-size: 1.3rem;
     font-weight: 600;
 }
 
 .timeline-card .card-subtitle {
-    color: #818cf8;
+    color: #3498db;  /* Light blue for school name */
+    font-size: 1.1rem;
     font-weight: 500;
 }
+
+.timeline-card .text-muted {
+    color: #e0e0e0 !important;  /* Light gray for year */
+}
+
+.timeline-card .card-text {
+    color: #ffffff;  /* White for description */
+    opacity: 0.9;
+}
+
+
+.timeline-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+
 
 /* Skills Section */
 .skills-card {
@@ -147,4 +183,204 @@
     position: absolute;
     left: -1rem;
     font-weight: bold;
+}
+
+
+
+/* About Section Styles */
+.about-section {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    color: #ffffff;
+    position: relative;
+}
+
+/* Section Headers */
+.section-header {
+    margin-bottom: 3rem;
+}
+
+.section-subtitle {
+    display: block;
+    color: #3498db;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+}
+
+.section-title {
+    color: #ffffff;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.section-divider {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.section-divider span {
+    width: 40px;
+    height: 4px;
+    background: #3498db;
+    border-radius: 2px;
+}
+
+.section-divider span:nth-child(2) {
+    width: 60px;
+}
+
+/* Cards with Gradients */
+.gradient-card {
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.1) 0%, rgba(52, 152, 219, 0.05) 100%);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gradient-card-blue {
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.1) 0%, rgba(41, 128, 185, 0.05) 100%);
+}
+
+.gradient-card-purple {
+    background: linear-gradient(135deg, rgba(155, 89, 182, 0.1) 0%, rgba(142, 68, 173, 0.05) 100%);
+}
+
+.gradient-card-green {
+    background: linear-gradient(135deg, rgba(46, 204, 113, 0.1) 0%, rgba(39, 174, 96, 0.05) 100%);
+}
+
+.gradient-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* License Card */
+.license-card {
+    text-align: center;
+    padding: 2rem;
+}
+
+.license-icon {
+    font-size: 3rem;
+    color: #2ecc71;
+    margin-bottom: 1rem;
+}
+
+/* Skills Badges */
+.badge {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 20px;
+    margin: 0.25rem;
+    transition: transform 0.2s ease;
+}
+
+.badge:hover {
+    transform: translateY(-2px);
+}
+
+.bg-primary { background: linear-gradient(135deg, #3498db, #2980b9) !important; }
+.bg-success { background: linear-gradient(135deg, #2ecc71, #27ae60) !important; }
+.bg-info { background: linear-gradient(135deg, #9b59b6, #8e44ad) !important; }
+.bg-warning { background: linear-gradient(135deg, #f1c40f, #f39c12) !important; }
+.bg-danger { background: linear-gradient(135deg, #e74c3c, #c0392b) !important; }
+.bg-secondary { background: linear-gradient(135deg, #95a5a6, #7f8c8d) !important; }
+
+/* Resume Button */
+.resume-btn {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resume-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+}
+
+/* Experience List */
+.experience-list {
+    list-style: none;
+    padding-left: 1.5rem;
+}
+
+.experience-list li {
+    position: relative;
+    margin-bottom: 0.5rem;
+}
+
+.experience-list li:before {
+    content: "→";
+    position: absolute;
+    left: -1.5rem;
+    color: #3498db;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .gradient-card {
+        margin: 1rem 0;
+    }
+}
+
+
+/* About Card Styling */
+.about-card {
+    padding: 1rem;
+}
+
+.about-text {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #e0e0e0;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.3px;
+    text-align: justify;
+}
+
+.location-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.location-icon {
+    color: #3498db;
+    font-size: 1.2rem;
+}
+
+.location-text {
+    color: #b3b3b3;
+    font-size: 1.1rem;
+}
+
+/* Highlight important phrases */
+.about-text strong {
+    color: #3498db;
+    font-weight: 600;
+}
+
+/* Add some hover interaction */
+.about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.about-card:hover .about-text {
+    color: #ffffff;
 }
