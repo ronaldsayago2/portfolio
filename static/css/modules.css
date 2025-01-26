@@ -1,0 +1,224 @@
+/* Odoo Modules Section Styles */
+.odoo-modules-section {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Header Styles */
+.section-header {
+    position: relative;
+    margin-bottom: 4rem;
+}
+
+.section-subtitle {
+    display: inline-block;
+    color: #3498db;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.section-divider {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1.5rem 0;
+}
+
+.section-divider span {
+    width: 40px;
+    height: 4px;
+    background: #3498db;
+    border-radius: 2px;
+}
+
+.section-divider span:nth-child(2) {
+    width: 60px;
+}
+
+.section-description {
+    max-width: 600px;
+    margin: 0 auto;
+    color: #b3b3b3;
+    font-size: 1.1rem;
+}
+
+/* Modules Kanban Layout */
+.modules-kanban {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.module-card {
+    perspective: 1000px;
+}
+
+.module-card-inner {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 2rem;
+    height: 100%;
+    transition: transform 0.6s, box-shadow 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+}
+
+.module-card:hover .module-card-inner {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.module-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.module-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.module-title {
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.client-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.client-tag {
+    background: rgba(52, 152, 219, 0.2);
+    color: #3498db;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.module-content {
+    flex-grow: 1;
+}
+
+.module-description {
+    color: #b3b3b3;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.module-features {
+    margin-bottom: 1.5rem;
+}
+
+.module-features h4 {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.module-features ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.module-features li {
+    color: #b3b3b3;
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: 0.8rem;
+}
+
+.module-features li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #3498db;
+}
+
+.module-footer {
+    margin-top: auto;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tech-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.tech-pill {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(46, 204, 113, 0.2);
+    color: #2ecc71;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.status-badge i {
+    font-size: 0.8rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .modules-kanban {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+/* Animation */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.module-card {
+    animation: float 6s ease-in-out infinite;
+    animation-delay: calc(var(--delay) * 0.2s);
+}

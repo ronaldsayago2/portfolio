@@ -64,6 +64,149 @@ portfolio_data = {
         'tools': ['Git', 'Docker', 'Kubernetes'],
         'soft_skills': ['Problem Solving', 'Communication']
     },
+    
+    
+    
+    
+    'odoo_modules': [
+        {
+            'name': 'Sales Incentives Module',
+            'clients': ['AVSC', 'IAJW'],
+            'description': 'Automated sales incentive calculation and distribution system that tracks sales performance and computes commissions based on configurable rules.',
+            'features': [
+                'Dynamic incentive calculation based on sales metrics',
+                'Customizable commission structures',
+                'Auto generation and computation of vendor bills to agents',
+                'Automated payment processing integration',
+                'Detailed and customized reporting'
+            ],
+            'technologies': ['Python', 'Odoo', 'PostgreSQL', 'XML'],
+            'status': 'Deployed and Active'
+        },
+        {
+            'name': 'Request For Payment Module',
+            'clients': ['Auro', 'Gruppo', 'Fortune Inc.','DLSU-D'],
+            'description': 'Streamlined payment request management system that handles the entire workflow from request initiation to approval and processing.',
+            'features': [
+                'Multi-level and configurable approval workflow',
+                'Budget tracking and validation',
+                'Integration with accounting module',
+                'Audit trail and history tracking'
+            ],
+            'technologies': ['Python', 'Odoo', 'PostgreSQL', 'XML'],
+            'status': 'Deployed and Active'
+        },
+        
+        
+        
+        {
+            'name': 'Cash Advance Module',
+            'clients': ['Auro', 'Gruppo', 'Fortune Inc.','Senco/Istudio Inc.'],
+            'description': 'Cash Advance request management system for company employees.',
+            'features': [
+                'Multi-level approval workflow',
+                'Document attachment support',
+                'Auto Generation and Computation of Journal Entries',
+                'Budget tracking and validation',
+                'Integration with accounting module',
+                'Audit trail and history tracking'
+            ],
+            'technologies': ['Python', 'Odoo', 'PostgreSQL', 'XML'],
+            'status': 'Deployed and Active'
+        },
+        {
+            'name': 'Purchase Requisition Module',
+            'clients': ['Vistaland'],
+            'description': 'Comprehensive purchase requisition system that manages procurement requests from initiation to fulfillment.',
+            'features': [
+                'Automated approval routing',
+                'Inventory level integration',
+                'Budget tracking and validation',
+                'Vendor management',
+                'Budget checking and validation',
+                'Purchase order generation'
+            ],
+            'technologies': ['Python', 'Odoo', 'PostgreSQL', 'XML'],
+            'status': 'Deployed and Active'
+        },
+        {
+            'name': 'Project PRS Module',
+            'clients': ['Vistaland'],
+            'description': 'Project-specific purchase requisition system tailored for construction and development projects.',
+            'features': [
+                'Project-based budgeting',
+                'Material requirement planning',
+                'Cost center tracking',
+                'Budget tracking and validation',
+                'Project milestone integration',
+            ],
+            'technologies': ['Python', 'Odoo', 'PostgreSQL', 'XML'],
+            'status': 'Deployed and Active'
+        },
+        {
+            'name': 'Request To Transfer Module',
+            'clients': ['Sevilla Inc.'],
+            'description': 'Inventory transfer management system that handles internal stock movements and transfers between locations.',
+            'features': [
+                'Real-time inventory tracking',
+                'Transfer approval workflow',
+                'Location management',
+                'Transfer history and tracking'
+            ],
+            'technologies': ['Python', 'Odoo', 'PostgreSQL', 'XML'],
+            'status': 'Deployed and Active'
+        },
+        {
+            'name': 'Request for Consumption Module',
+            'clients': ['Sevilla Inc.'],
+            'description': 'System for managing internal material consumption requests and tracking resource usage.',
+            'features': [
+                'Material consumption tracking',
+                'Auto Generation of Stock Movement Transactions in the system',
+                'Automated stock updates',
+            ],
+            'technologies': ['Python', 'Odoo', 'PostgreSQL', 'XML'],
+            'status': 'Deployed and Active'
+        },
+        {
+            'name': 'Trip Ticket Process Module',
+            'clients': ['Ardent World Inc.'],
+            'description': 'Comprehensive system for managing vehicle trips, logistics, and delivery scheduling.',
+            'features': [
+                'Driver assignment',
+                'Delivery scheduling',
+                'Customized Report for trip ticket'
+            ],
+            'technologies': ['Python', 'Odoo', 'PostgreSQL', 'XML'],
+            'status': 'Deployed and Active'
+        },
+        {
+            'name': 'Job Order Module',
+            'clients': ['Ardent World'],
+            'description': 'Complete job order management system for tracking and managing service requests and work orders.',
+            'features': [
+                'Job Order Requests for Manufacturing Subcontractors',
+                'Automated Computation of prices base on configured vendors',
+            ],
+            'technologies': ['Python', 'Odoo', 'PostgreSQL', 'XML'],
+            'status': 'Deployed and Active'
+        },
+        {
+            'name': 'Biometrics Login Syncing',
+            'clients': ['DLSZ'],
+            'description': 'Integration system that synchronizes biometric data into odoo.',
+            'features': [
+                'Real-time biometric data synchronization from microsoft server db',
+                'Secure authentication protocol',
+                'User attendance tracking',
+                'Configurable Syncing Parameters'
+            ],
+            'technologies': ['Python', 'Odoo', 'PostgreSQL', 'XML', 'Biometric API Integration'],
+            'status': 'Deployed and Active'
+        }
+    ],
+    
+    
     'projects': [
         {
             'name': 'Gift Registry Feature',
@@ -81,9 +224,8 @@ portfolio_data = {
             'image': 'gift_registry.jpg' 
         }
     ],
-    'blog_posts': [
   
-    ],
+  
     'contact': {
         'email': 'ronaldsayago2@gmail.com',
         'phone': '09278159941',

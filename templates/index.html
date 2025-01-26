@@ -46,6 +46,73 @@
     </div>
 </section>
 
+
+<!-- Odoo Modules Section -->
+<section class="odoo-modules-section py-5" data-aos="fade-up">
+    <div class="container">
+        <!-- Header -->
+        <div class="section-header text-center mb-5">
+            <span class="section-subtitle" data-aos="fade-up">CUSTOM DEVELOPMENTS</span>
+            <h2 class="section-title text-light" data-aos="fade-up" data-aos-delay="100">Odoo Modules Portfolio</h2>
+            <div class="section-divider" data-aos="fade-up" data-aos-delay="200">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <p class="section-description text-light" data-aos="fade-up" data-aos-delay="300">
+                Specialized ERP solutions crafted and implemented for clients
+            </p>
+        </div>
+
+        <!-- Modules Grid -->
+        <div class="modules-kanban">
+            {% for module in data.odoo_modules %}
+            <div class="module-card" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
+                <div class="module-card-inner">
+                    <div class="module-header">
+                        <div class="module-icon">
+                            <i class="fas fa-cube"></i>
+                        </div>
+                        <h3 class="module-title">{{ module.name }}</h3>
+                    </div>
+
+                    <div class="client-tags">
+                        {% for client in module.clients %}
+                        <span class="client-tag">{{ client }}</span>
+                        {% endfor %}
+                    </div>
+
+                    <div class="module-content">
+                        <p class="module-description">{{ module.description }}</p>
+                        
+                        <div class="module-features">
+                            <h4>Key Features</h4>
+                            <ul>
+                                {% for feature in module.features[:3] %}
+                                <li>{{ feature }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="module-footer">
+                        <div class="tech-pills">
+                            {% for tech in module.technologies %}
+                            <span class="tech-pill">{{ tech }}</span>
+                            {% endfor %}
+                        </div>
+                        <span class="status-badge">
+                            <i class="fas fa-check-circle"></i>
+                            {{ module.status }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
 <!-- Projects Section -->
 <section class="projects-section py-5">
     <div class="container">
