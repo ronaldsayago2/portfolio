@@ -1,0 +1,150 @@
+/* About page styling */
+.about-section {
+    padding-top: 6rem;
+    background: linear-gradient(to bottom, #f8fafc, #fff);
+}
+
+/* Personal Info Card */
+.about-card {
+    border: none;
+    border-radius: 15px;
+    background: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Section Headers */
+.section-header {
+    position: relative;
+    color: #1e293b;
+    margin-bottom: 2.5rem;
+}
+
+.section-header::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(to right, #818cf8, #c084fc);
+}
+
+/* Education & Experience Cards */
+.timeline-card {
+    border: none;
+    border-radius: 15px;
+    background: white;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.timeline-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-card .card-title {
+    color: #1e293b;
+    font-weight: 600;
+}
+
+.timeline-card .card-subtitle {
+    color: #818cf8;
+    font-weight: 500;
+}
+
+/* Skills Section */
+.skills-card {
+    border: none;
+    border-radius: 15px;
+    background: white;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.skills-section h5 {
+    color: #1e293b;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+/* Skill Badges */
+.badge {
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.badge:hover {
+    transform: translateY(-2px);
+}
+
+.bg-primary {
+    background: linear-gradient(135deg, #818cf8, #6366f1) !important;
+}
+
+.bg-success {
+    background: linear-gradient(135deg, #34d399, #10b981) !important;
+}
+
+.bg-info {
+    background: linear-gradient(135deg, #60a5fa, #3b82f6) !important;
+}
+
+.bg-secondary {
+    background: linear-gradient(135deg, #94a3b8, #64748b) !important;
+}
+
+/* Resume Download Button */
+.resume-btn {
+    background: linear-gradient(135deg, #818cf8, #6366f1);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
+    transition: all 0.3s ease;
+}
+
+.resume-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+    background: linear-gradient(135deg, #6366f1, #4f46e5);
+}
+
+.resume-btn i {
+    transition: transform 0.3s ease;
+}
+
+.resume-btn:hover i {
+    transform: translateY(-2px);
+}
+
+/* List Items in Experience */
+.experience-list {
+    padding-left: 1.5rem;
+}
+
+.experience-list li {
+    position: relative;
+    padding-left: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.experience-list li::before {
+    content: '•';
+    color: #818cf8;
+    position: absolute;
+    left: -1rem;
+    font-weight: bold;
+}

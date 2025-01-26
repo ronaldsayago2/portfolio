@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="contact-section py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h1 class="text-center mb-5" data-aos="fade-up">Contact Me</h1>
+
+                <!-- Contact Information -->
+                <div class="contact-info-card mb-5" data-aos="fade-up">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4 contact-info-item text-center mb-3 mb-md-0">
+                                <h5><i class="fas fa-envelope mb-2"></i><br>Email</h5>
+                                <p>{{ data.contact.email }}</p>
+                            </div>
+                            <div class="col-md-4 contact-info-item text-center mb-3 mb-md-0">
+                                <h5><i class="fas fa-phone mb-2"></i><br>Phone</h5>
+                                <p>{{ data.contact.phone }}</p>
+                            </div>
+                            <div class="col-md-4 contact-info-item text-center">
+                                <h5><i class="fas fa-map-marker-alt mb-2"></i><br>Location</h5>
+                                <p>{{ data.personal_info.location }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-card" data-aos="fade-up">
+                    <div class="card-body">
+                        <h2 class="card-title h4 mb-4">Send me a message</h2>
+                        <form method="POST" action="{{ url_for('contact') }}">
+                            {{ form.hidden_tag() }}
+                            
+                            <div class="mb-3">
+                                {{ form.name.label(class="form-label") }}
+                                {{ form.name(class="form-control" + (" is-invalid" if form.name.errors else ""), placeholder="Your name") }}
+                                {% if form.name.errors %}
+                                <div class="invalid-feedback">
+                                    {% for error in form.name.errors %}
+                                    <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                                {% endif %}
+                            </div>
+
+                            <div class="mb-3">
+                                {{ form.email.label(class="form-label") }}
+                                {{ form.email(class="form-control" + (" is-invalid" if form.email.errors else ""), placeholder="your.email@example.com") }}
+                                {% if form.email.errors %}
+                                <div class="invalid-feedback">
+                                    {% for error in form.email.errors %}
+                                    <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                                {% endif %}
+                            </div>
+
+                            <div class="mb-3">
+                                {{ form.subject.label(class="form-label") }}
+                                {{ form.subject(class="form-control" + (" is-invalid" if form.subject.errors else ""), placeholder="Message subject") }}
+                                {% if form.subject.errors %}
+                                <div class="invalid-feedback">
+                                    {% for error in form.subject.errors %}
+                                    <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                                {% endif %}
+                            </div>
+
+                            <div class="mb-3">
+                                {{ form.message.label(class="form-label") }}
+                                {{ form.message(class="form-control" + (" is-invalid" if form.message.errors else ""), rows="5", placeholder="Your message here...") }}
+                                {% if form.message.errors %}
+                                <div class="invalid-feedback">
+                                    {% for error in form.message.errors %}
+                                    <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                                {% endif %}
+                            </div>
+
+                            {{ form.submit(class="btn btn-submit") }}
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Social Links -->
+                <div class="social-links-section text-center" data-aos="fade-up">
+                    <h3 class="h5 mb-4">Connect with me on social media</h3>
+                    <div class="social-buttons">
+                        <a href="{{ data.contact.linkedin }}" class="social-button btn-linkedin btn btn-outline-primary" target="_blank">
+                            <i class="fab fa-linkedin"></i>LinkedIn
+                        </a>
+                        <a href="{{ data.contact.github }}" class="social-button btn-github btn btn-outline-dark" target="_blank">
+                            <i class="fab fa-github"></i>GitHub
+                        </a>
+                        <a href="{{ data.contact.facebook }}" class="social-button btn-facebook btn btn-outline-info" target="_blank">
+                            <i class="fab fa-facebook"></i>Facebook
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

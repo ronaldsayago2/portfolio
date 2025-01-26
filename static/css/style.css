@@ -1,0 +1,233 @@
+/* Modern gradient animated background */
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    background: #0f172a;
+    overflow: hidden;
+}
+
+.animated-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, 
+        rgba(15, 23, 42, 0.3) 0%,
+        rgba(88, 28, 135, 0.3) 100%);
+}
+
+.animated-bg::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background: radial-gradient(circle at center,
+        transparent 30%,
+        rgba(88, 28, 135, 0.1) 70%);
+    animation: rotate 30s linear infinite;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Profile image styling */
+.profile-img-container {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    border-radius: 50%;
+    padding: 5px;
+    background: linear-gradient(45deg, #818cf8, #c084fc);
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #1e293b;
+}
+
+/* Typing effect */
+.typed-container {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.typed-text {
+    color: #818cf8;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.cursor {
+    display: inline-block;
+    width: 3px;
+    background-color: #818cf8;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Glassmorphism buttons */
+.btn-glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 12px 30px;
+    color: white;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.btn-glass:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    color: white;
+}
+
+/* Floating social links */
+.social-links-floating {
+    position: fixed;
+    right: 50px;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.social-link {
+    color: white;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    color: #818cf8;
+    transform: translateY(-2px);
+}
+
+.social-line {
+    width: 1px;
+    height: 100px;
+    background: linear-gradient(to bottom, #818cf8, transparent);
+}
+
+/* Project cards */
+.project-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center all content */
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-image {
+    position: relative;
+    overflow: hidden;
+    padding-top: 60%;
+    margin-bottom: 1rem; /* Add space between image and text */
+}
+
+.project-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-description {
+    color: #475569;
+    font-size: 1rem;
+    max-width: 80%; /* Limit width of text for better readability */
+    margin: 0 auto; /* Center the text block */
+    line-height: 1.6;
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-content {
+    padding: 1.5rem;
+    color: #1e293b;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+}
+
+.project-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #1e293b;
+    font-weight: 600;
+}
+
+/* Projects section background */
+.projects-section {
+    background: #f8fafc; /* Light background for the section */
+    padding: 4rem 0;
+}
+
+
+.tech-tag {
+    display: inline-block;
+    padding: 5px 10px;
+    background: #818cf8;
+    color: white;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin: 2px;
+}
+
+/* Section title centering */
+.section-title {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 3rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(to right, #818cf8, #c084fc);
+}

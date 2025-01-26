@@ -1,0 +1,142 @@
+/* Contact Section Styling */
+.contact-section {
+    padding-top: 6rem;
+    background: linear-gradient(to bottom, #f8fafc, #fff);
+}
+
+/* Contact Info Card */
+.contact-info-card {
+    border: none;
+    border-radius: 15px;
+    background: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info-card .card-body {
+    padding: 2rem;
+}
+
+.contact-info-item {
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.contact-info-item:hover {
+    transform: translateY(-5px);
+}
+
+.contact-info-item h5 {
+    color: #1e293b;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.contact-info-item p {
+    color: #64748b;
+    margin-bottom: 0;
+}
+
+/* Contact Form Card */
+.contact-form-card {
+    border: none;
+    border-radius: 15px;
+    background: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form-card .card-body {
+    padding: 2rem;
+}
+
+/* Form Styling */
+.form-label {
+    color: #1e293b;
+    font-weight: 500;
+}
+
+.form-control {
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #818cf8;
+    box-shadow: 0 0 0 0.2rem rgba(129, 140, 248, 0.2);
+}
+
+.form-control.is-invalid {
+    border-color: #ef4444;
+    box-shadow: none;
+}
+
+/* Submit Button */
+.btn-submit {
+    background: linear-gradient(135deg, #818cf8, #6366f1);
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+    background: linear-gradient(135deg, #6366f1, #4f46e5);
+}
+
+/* Social Links */
+.social-links-section {
+    margin-top: 3rem;
+}
+
+.social-button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin: 0 0.5rem;
+}
+
+.social-button:hover {
+    transform: translateY(-2px);
+}
+
+.social-button i {
+    margin-right: 0.5rem;
+}
+
+/* Social Button Colors */
+.btn-linkedin {
+    color: #0077b5;
+    border-color: #0077b5;
+}
+
+.btn-linkedin:hover {
+    background-color: #0077b5;
+    color: white;
+}
+
+.btn-github {
+    color: #333;
+    border-color: #333;
+}
+
+.btn-github:hover {
+    background-color: #333;
+    color: white;
+}
+
+.btn-facebook {
+    color: #1877f2;
+    border-color: #1877f2;
+}
+
+.btn-facebook:hover {
+    background-color: #1877f2;
+    color: white;
+}

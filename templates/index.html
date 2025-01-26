@@ -1,0 +1,155 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Hero Section with animated background -->
+<section class="hero-section">
+    <div class="animated-bg"></div>
+    <div class="container position-relative">
+        <div class="row min-vh-100 align-items-center">
+            <div class="col-lg-8 mx-auto text-center">
+                <div class="profile-img-container mb-4" data-aos="fade-down">
+                    <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Profile" class="profile-img">
+                </div>
+                <h1 class="display-4 fw-bold text-light" data-aos="fade-up">
+                    {{ data.personal_info.name }}
+                </h1>
+                <div class="typed-container" data-aos="fade-up" data-aos-delay="100">
+                    <span class="typed-text"></span><span class="cursor">&nbsp;</span>
+                </div>
+                <p class="lead text-light mb-5" data-aos="fade-up" data-aos-delay="200">
+                    {{ data.personal_info.about_short }}
+                </p>
+                <div class="d-flex justify-content-center gap-3 flex-wrap" data-aos="fade-up" data-aos-delay="300">
+                    <a href="{{ url_for('projects') }}" class="btn btn-glass">
+                        <span>View Projects</span>
+                    </a>
+                    <a href="{{ url_for('static', filename='files/resume.pdf') }}" class="btn btn-glass" download>
+                        <span>Download CV</span>
+                    </a>
+                    <a href="{{ url_for('contact') }}" class="btn btn-glass">
+                        <span>Contact Me</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Social Links -->
+    <div class="social-links-floating">
+        <a href="{{ data.contact.github }}" class="social-link" target="_blank">
+            <i class="fab fa-github"></i>
+        </a>
+        <a href="{{ data.contact.linkedin }}" class="social-link" target="_blank">
+            <i class="fab fa-linkedin"></i>
+        </a>
+        <div class="social-line"></div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section class="projects-section py-5">
+    <div class="container">
+        <h2 class="section-title text-center mb-5" data-aos="fade-up">Featured Projects</h2>
+        <div class="row">
+            {% for project in data.projects[:3] %}
+            <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="{{ url_for('static', filename='images/' + project.image) }}" alt="{{ project.name }}">
+                        <div class="project-overlay">
+                            <div class="project-tech">
+                                {% for tech in project.technologies %}
+                                <span class="tech-tag">{{ tech }}</span>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">{{ project.name }}</h3>
+                        <p class="project-description">{{ project.description }}</p>
+                        <div class="project-links">
+                            {% if project.live_link %}
+                            <a href="{{ project.live_link }}" class="btn btn-sm btn-outline" target="_blank">
+                                <i class="fas fa-external-link-alt me-2"></i>Live Demo
+                            </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+<!-- Chess Game Section -->
+<section class="chess-section" data-aos="fade-up">
+    <div class="container">
+        <h2 class="text-center mb-4 text-light">Challenge Me to Chess</h2>
+        <p class="text-center mb-5 text-light">Goodluck against stockfish! You cannot win</p>
+        
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <!-- Chess board container -->
+                <div class="board-container mb-4">
+                    <div id="myBoard" class="mx-auto"></div>
+                </div>
+                
+                <!-- Game controls -->
+                <div class="game-controls d-flex justify-content-center flex-wrap gap-2 mb-3">
+                    <select class="control-btn" id="difficulty">
+                        <option value="1000">Easy</option>
+                        <option value="2000" selected>Medium</option>
+                        <option value="3000">Hard</option>
+                    </select>
+                    <button class="control-btn" id="startBtn">New Game</button>
+                    <button class="control-btn" id="undoBtn">Undo Move</button>
+                    <button class="control-btn" id="flipBtn">Flip Board</button>
+                </div>
+                
+                <!-- Game status -->
+                <div id="status" class="text-center text-light"></div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Typing effect with proper initialization and error checking
+    document.addEventListener('DOMContentLoaded', function() {
+        const typedElement = document.querySelector('.typed-text');
+        if (!typedElement) return; // Guard clause if element doesn't exist
+
+        const texts = ["{{ data.personal_info.title }}", "Odoo Developer", "Python Developer"];
+        let count = 0;
+        let index = 0;
+        let currentText = '';
+        let letter = '';
+
+        function type() {
+            if (count >= texts.length) {
+                count = 0;
+            }
+            currentText = texts[count];
+            letter = currentText.slice(0, ++index);
+
+            typedElement.textContent = letter;
+            if (letter.length === currentText.length) {
+                setTimeout(() => {
+                    index = 0;
+                    count++;
+                }, 2000);
+            }
+            setTimeout(type, 100);
+        }
+
+        // Start the typing animation
+        if (texts.length > 0) {
+            type();
+        }
+    });
+</script>
+{% endblock %}

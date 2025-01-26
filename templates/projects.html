@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container">
+        <h1 class="text-center mb-5" data-aos="fade-up">My Projects</h1>
+
+        <!-- Project Categories -->
+        <div class="text-center mb-4">
+            <a href="{{ url_for('projects') }}" class="btn btn-outline-primary me-2 mb-2">All</a>
+            {% set categories = data.projects|map(attribute='category')|unique|list %}
+            {% for category in categories %}
+            <a href="{{ url_for('projects', category=category) }}" 
+               class="btn btn-outline-primary me-2 mb-2">{{ category }}</a>
+            {% endfor %}
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="row">
+            {% for project in projects %}
+            <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
+                <div class="card h-100 shadow-sm">
+                    <img src="{{ url_for('static', filename='images/' + project.image) }}" 
+                         class="card-img-top" alt="{{ project.name }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ project.name }}</h5>
+                        <p class="card-text">{{ project.description }}</p>
+                        <p class="text-muted">
+                            <small>Technologies: {{ project.technologies|join(', ') }}</small>
+                        </p>
+                    </div>
+                    <div class="card-footer bg-transparent border-top-0">
+                        <a href="{{ url_for('project_detail', project_name=project.name|lower|replace(' ', '-')) }}" 
+                           class="btn btn-primary">Learn More</a>
+                        {% if project.github_link %}
+                        <a href="{{ project.github_link }}" class="btn btn-outline-dark ms-2" target="_blank">GitHub</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}
